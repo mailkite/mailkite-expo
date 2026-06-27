@@ -1,0 +1,44 @@
+{
+  "name": "@mailkite/expo",
+  "version": "0.1.0",
+  "description": "Expo / React Native adapter for MailKite — wires expo-secure-store + expo-auth-session into @mailkite/client so RN apps get the OAuth (the token is the user) flow with zero re-implemented PKCE.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": ["mailkite", "expo", "react-native", "email", "oauth", "pkce", "secure-store"],
+  "homepage": "https://mailkite.dev/docs/libraries",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mailkite/mailkite.git",
+    "directory": "sdks/clients/expo"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@mailkite/client": "file:../ts"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "expo-auth-session": "*",
+    "expo-secure-store": "*",
+    "expo-web-browser": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
